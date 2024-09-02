@@ -4,7 +4,6 @@ import { Button } from "@/components/UI/Button";
 import { Work } from "@/sections/Work";
 import { cn } from "@/utils";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function WorkCard({ contents, logo, direction }: Work) {
   return (
@@ -47,7 +46,13 @@ export default function WorkCard({ contents, logo, direction }: Work) {
             </a>
           </Button>
           <Button size="md" color="none" border="md">
-            <Link href={contents.buttons.moreLink}>More</Link>
+            <a
+              href={contents.buttons.moreLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              More
+            </a>
           </Button>
         </div>
       </div>
