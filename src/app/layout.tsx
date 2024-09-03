@@ -6,7 +6,10 @@ const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pedro Serrano's Portfolio",
-  description: "setPedro",
+  description: "Where passion meets code.",
+  openGraph: {
+    images: "https://pedroserrano.dev/metadata.png"
+  }
 };
 
 export default function RootLayout({

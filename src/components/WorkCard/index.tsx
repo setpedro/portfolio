@@ -1,9 +1,8 @@
-"use client";
-
 import { Button } from "@/components/UI/Button";
 import { Work } from "@/sections/Work";
 import { cn } from "@/utils";
 import Image from "next/image";
+import { Hyperlink } from "../UI/HyperLink";
 
 export default function WorkCard({ contents, logo, direction }: Work) {
   return (
@@ -37,22 +36,10 @@ export default function WorkCard({ contents, logo, direction }: Work) {
             color={contents.buttons.websiteButtonColor}
             border="none"
           >
-            <a
-              href={contents.buttons.websiteLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Website
-            </a>
+            <Hyperlink href={contents.buttons.websiteLink}>Website</Hyperlink>
           </Button>
           <Button size="md" color="none" border="md">
-            <a
-              href={contents.buttons.moreLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              More
-            </a>
+            <Hyperlink href={contents.buttons.moreLink}>More</Hyperlink>
           </Button>
         </div>
       </div>

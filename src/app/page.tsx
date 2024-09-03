@@ -1,6 +1,7 @@
 "use client";
 
 import Footer from "@/components/Footer";
+import { Hyperlink } from "@/components/UI/HyperLink";
 import useHash from "@/hooks/useHash";
 import Links from "@/sections/Links";
 import PedroSerrano from "@/sections/PedroSerrano";
@@ -41,7 +42,19 @@ export default function Home() {
       <div ref={linksRef}>
         <Links />
       </div>
-      <Footer hasChevron={false} />
+      <div>
+        <p className="text-center mb-2 text-xs font-semibold">
+          The code for this porfolio is public and can be viewed{" "}
+          <Hyperlink
+            href="https://github.com/setPedro/portfolio"
+            className="border-b hover:text-[#add8e6] hover:border-[#add8e6]"
+          >
+            here
+          </Hyperlink>
+          .
+        </p>
+        <Footer hasChevron={false} />
+      </div>
     </main>
   );
 }

@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Skills() {
   const skills = [
-    "Typescript",
+    "TypeScript",
     "React",
     "Next",
     "Rust",

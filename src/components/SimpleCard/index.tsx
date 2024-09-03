@@ -1,6 +1,6 @@
 import { cn } from "@/utils";
 import Image from "next/image";
-import Link from "next/link";
+import { Hyperlink } from "../UI/HyperLink";
 
 export type SimpleCardProps = {
   text: string;
@@ -27,11 +27,5 @@ export default function SimpleCard({
     </div>
   );
 
-  return link ? (
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      {card}
-    </a>
-  ) : (
-    card
-  );
+  return link ? <Hyperlink href={link}>{card}</Hyperlink> : card;
 }
