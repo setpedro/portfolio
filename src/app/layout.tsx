@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/utils";
 
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sourceCodePro.className}>{children}</body>
+      <body className={cn("no-scrollbar", sourceCodePro.className)}>{children}</body>
     </html>
   );
 }
