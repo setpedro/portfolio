@@ -35,6 +35,10 @@ export default function WorkCard({ contents, logo, direction }: Work) {
             size="md"
             color={contents.buttons.websiteButtonColor}
             border="none"
+            className={cn(
+              contents.buttons.websiteButtonColor === "solanaMirror" &&
+                "text-foreground"
+            )}
           >
             <Hyperlink href={contents.buttons.websiteLink}>Website</Hyperlink>
           </Button>

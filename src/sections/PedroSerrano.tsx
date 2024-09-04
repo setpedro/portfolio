@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import MarqueeFooter from "@/components/MarqueeFooter";
 import NavBar from "@/components/NavBar";
 import { Button } from "@/components/UI/Button";
 import Image from "next/image";
@@ -14,6 +14,7 @@ export default function PedroSerrano() {
           alt="Logo"
           width={256}
           height={256}
+          priority
           className="hidden md:block"
         />
         <div className="flex flex-col gap-12 font-bold">
@@ -26,7 +27,7 @@ export default function PedroSerrano() {
           </Button>
         </div>
       </div>
-      <Footer hasChevron />
+      <MarqueeFooter hasChevron />
     </div>
   );
 }

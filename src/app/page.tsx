@@ -1,6 +1,6 @@
 "use client";
 
-import Footer from "@/components/Footer";
+import MarqueeFooter from "@/components/MarqueeFooter";
 import { Hyperlink } from "@/components/UI/HyperLink";
 import useHash from "@/hooks/useHash";
 import Links from "@/sections/Links";
@@ -53,7 +53,7 @@ export default function Home() {
           </Hyperlink>
           .
         </p>
-        <Footer hasChevron={false} />
+        <MarqueeFooter hasChevron={false} />
       </div>
     </main>
   );
