@@ -26,7 +26,7 @@ export default function Work() {
           "Blockchain tool that facilitates users check their wallet at a glance.",
         buttons: {
           websiteButtonColor: "solanaMirror",
-          websiteLink: "",
+          websiteLink: "https://solanamirror.xyz/",
           moreLink: "https://github.com/solana-mirror",
         },
       },
