@@ -33,7 +33,7 @@ export default function Home() {
           The code for this porfolio is public and can be viewed{" "}
           <Hyperlink
             href="https://github.com/setPedro/portfolio"
-            className="border-b hover:text-[#add8e6] hover:border-[#add8e6]"
+            className="border-b hover:text-link-hover-blue hover:border-link-hover-blue"
           >
             here
           </Hyperlink>

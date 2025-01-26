@@ -15,6 +15,7 @@ const config: Config = {
         accent: "#707070",
         solanaMirror: "#87B7E2",
         usellExperience: "#38419D",
+        "link-hover-blue": "#add8e6",
       },
     },
   },
