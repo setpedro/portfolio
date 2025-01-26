@@ -1,3 +1,4 @@
+import { scrollToHash } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -11,18 +12,10 @@ export default function HashLink({ href, children, className }: Props) {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
 
-    if (window.location.hash === href) {
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
+    if (window.location.hash !== href) {
       history.pushState(null, "", href);
-      const target = document.querySelector(href);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
     }
+    scrollToHash(href);
   };
 
   return (

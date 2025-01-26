@@ -2,44 +2,30 @@
 
 import MarqueeFooter from "@/components/MarqueeFooter";
 import { Hyperlink } from "@/components/UI/HyperLink";
-import useHash from "@/hooks/useHash";
 import Links from "@/sections/Links";
 import PedroSerrano from "@/sections/PedroSerrano";
 import Skills from "@/sections/Skills";
 import Work from "@/sections/Work";
-import { useEffect, useRef } from "react";
+import { scrollToHash } from "@/utils";
+import { useEffect } from "react";
 
 export default function Home() {
-  const workRef = useRef<HTMLDivElement>(null);
-  const skillsRef = useRef<HTMLDivElement>(null);
-  const linksRef = useRef<HTMLDivElement>(null);
-
-  const hash = useHash();
-
   useEffect(() => {
-    switch (hash) {
-      case "#work":
-        workRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "#skills":
-        skillsRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
-      case "#links":
-        linksRef.current?.scrollIntoView({ behavior: "smooth" });
-        break;
+    if (window.location.hash) {
+      scrollToHash(window.location.hash);
     }
-  }, [hash]);
+  }, []);
 
   return (
     <main className="flex flex-col gap-[72px] h-screen">
       <PedroSerrano />
-      <div ref={workRef} id="work">
+      <div id="work">
         <Work />
       </div>
-      <div ref={skillsRef} id="skills">
+      <div id="skills">
         <Skills />
       </div>
-      <div ref={linksRef} id="links">
+      <div id="links">
         <Links />
       </div>
       <div>

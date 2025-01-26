@@ -3,7 +3,6 @@ import NavBar from "@/components/NavBar";
 import { Button } from "@/components/UI/Button";
 import HashLink from "@/components/UI/HashLink";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function PedroSerrano() {
   return (
