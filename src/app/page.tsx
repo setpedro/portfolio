@@ -33,13 +33,13 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-[72px] h-screen">
       <PedroSerrano />
-      <div ref={workRef}>
+      <div ref={workRef} id="work">
         <Work />
       </div>
-      <div ref={skillsRef}>
+      <div ref={skillsRef} id="skills">
         <Skills />
       </div>
-      <div ref={linksRef}>
+      <div ref={linksRef} id="links">
         <Links />
       </div>
       <div>

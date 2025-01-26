@@ -1,6 +1,7 @@
 import MarqueeFooter from "@/components/MarqueeFooter";
 import NavBar from "@/components/NavBar";
 import { Button } from "@/components/UI/Button";
+import HashLink from "@/components/UI/HashLink";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,7 +24,7 @@ export default function PedroSerrano() {
             <p>Where passion meets code.</p>
           </div>
           <Button size="md" color="none" border="md" className="w-fit">
-            <Link href="/#work">Take a look</Link>
+            <HashLink href="#work">Take a look</HashLink>
           </Button>
         </div>
       </div>
