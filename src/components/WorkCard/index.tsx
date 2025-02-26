@@ -31,20 +31,38 @@ export default function WorkCard({ contents, logo, direction }: Work) {
           <p className="font-medium">{contents.description}</p>
         </div>
         <div className="flex gap-3">
-          <Button
-            size="md"
-            color={contents.buttons.websiteButtonColor}
-            border="none"
-            className={cn(
-              contents.buttons.websiteButtonColor === "solanaMirror" &&
+          {/* TODO: refactor, open Modal if no website link */}
+          {contents.buttons.websiteLink ?
+            <Hyperlink href={contents.buttons.websiteLink}>
+              <Button
+                size="md"
+                color={contents.buttons.websiteButtonColor}
+                border="none"
+                className={cn(
+                  contents.buttons.websiteButtonColor === "solanaMirror" &&
+                  "text-foreground"
+                )}
+              >
+                Website
+              </Button>
+            </Hyperlink>
+            : <Button
+              size="md"
+              color={contents.buttons.websiteButtonColor}
+              border="none"
+              className={cn(
+                contents.buttons.websiteButtonColor === "solanaMirror" &&
                 "text-foreground"
-            )}
-          >
-            <Hyperlink href={contents.buttons.websiteLink}>Website</Hyperlink>
-          </Button>
-          <Button size="md" color="none" border="md">
-            <Hyperlink href={contents.buttons.moreLink}>More</Hyperlink>
-          </Button>
+              )}
+            >
+              Website
+            </Button>
+          }
+          <Hyperlink href={contents.buttons.moreLink}>
+            <Button size="md" color="none" border="md">
+              More
+            </Button>
+          </Hyperlink>
         </div>
       </div>
     </div>
