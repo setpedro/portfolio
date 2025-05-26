@@ -6,7 +6,7 @@ import { cn } from "@/utils";
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pedro Serrano's Portfolio",
+  title: "Coming soon...",
   description: "Where passion meets code.",
   openGraph: {
     images: "https://pedroserrano.dev/metadata.png"
