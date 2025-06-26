@@ -7,11 +7,8 @@ export default function Skills() {
     "React",
     "Next",
     "Rust",
-    "Tailwind",
-    "Redux",
-    "Node",
-    "Firebase",
   ];
+  
   return (
     <div className="flex flex-col gap-6 items-center">
       <h1 className="text-3xl font-bold">Skills</h1>

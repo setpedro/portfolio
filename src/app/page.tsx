@@ -17,21 +17,30 @@ export default function Home() {
     }, []);
 
     return (
-        <main className="flex flex-col h-screen">
-            <div className="flex flex-col flex-grow justify-center items-center">
-                <div className="flex flex-col items-center">
-                    <div>Coming soon...</div>
-                    <p className="text-center my-2 text-xs font-semibold">
-                        <Hyperlink
-                            href="https://github.com/setPedro/portfolio"
-                            className="border-b hover:text-link-hover-blue hover:border-link-hover-blue"
-                        >
-                            stay tuned
-                        </Hyperlink>
-                    </p>
-                </div>
+        <main className="flex flex-col gap-[72px] h-screen">
+            <PedroSerrano />
+            <div id="work">
+                <Work />
             </div>
-            <MarqueeFooter hasChevron={false} />
+            <div id="skills">
+                <Skills />
+            </div>
+            <div id="links">
+                <Links />
+            </div>
+            <div>
+                <p className="text-center mb-2 text-xs font-semibold">
+                    The code for this porfolio is public and can be viewed{" "}
+                    <Hyperlink
+                        href="https://github.com/setPedro/portfolio"
+                        className="border-b hover:text-link-hover-blue hover:border-link-hover-blue"
+                    >
+                        here
+                    </Hyperlink>
+                    .
+                </p>
+                <MarqueeFooter hasChevron={false} />
+            </div>
         </main>
     );
 }

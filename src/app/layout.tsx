@@ -7,7 +7,7 @@ import Script from "next/script";
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Coming soon...",
+  title: "Pedro Serrano's Portfolio",
   description: "Where passion meets code.",
   openGraph: {
     images: "https://pedroserrano.dev/metadata.png"
@@ -23,10 +23,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("no-scrollbar", sourceCodePro.className)}>
         {children}
-        <Script 
-          src="https://chatbot-production-6039.up.railway.app/widget.js?client=clinicax" 
-          strategy="lazyOnload"
-        />
       </body>
     </html>
   );
