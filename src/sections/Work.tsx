@@ -2,7 +2,7 @@ import WorkCard from "@/components/WorkCard";
 import { cn } from "@/utils";
 
 type Buttons = {
-  websiteButtonColor: "solanaMirror" | "usellExperience";
+  websiteButtonColor: "solanaMirror" | "snaike" | "usellExperience";
   websiteLink: string;
   moreLink: string;
 };
@@ -35,6 +35,19 @@ export default function Work() {
     },
     {
       contents: {
+        title: "Snaike",
+        description: "Browser-based snake game built with Rust + WASM. Smooth movement, high performance, and an AI opponent.",
+        buttons: {
+          websiteButtonColor: "snaike",
+          websiteLink: "", 
+          moreLink: "https://github.com/setPedro/snaike"
+        },
+      },
+      logo: "/Work/SnaikeLogo.svg",
+      direction: "right"
+    },
+    {
+      contents: {
         title: "uSell Experience",
         description:
           "AI tool that provides custom reviews of a given website, both in terms of UI and performance",
@@ -45,7 +58,7 @@ export default function Work() {
         },
       },
       logo: "/Work/UsellExperienceLogo.svg",
-      direction: "right",
+      direction: "left",
     },
   ];
 

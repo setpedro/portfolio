@@ -5,7 +5,7 @@ type ButtonProps = {
   children: ReactNode;
   onClick?: () => void;
   size: "icon" | "sm" | "md" | "none";
-  color: "solanaMirror" | "usellExperience" | "none";
+  color: "solanaMirror" | "snaike" | "usellExperience" | "none";
   border: "md" | "none";
   className?: string;
 };
@@ -29,6 +29,7 @@ export const Button = ({
     },
     colors: {
       solanaMirror: "bg-solanaMirror",
+      snaike: "bg-snaike",
       usellExperience: "bg-usellExperience",
       none: "none",
     },
