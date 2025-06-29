@@ -22,7 +22,7 @@ export const Modal = ({ children, onClose, className }: Props) => {
     >
       <div
         className={cn(
-          'relative p-6 rounded-lg bg-accent border-2 border opacity-100',
+          'relative p-6 rounded-lg bg-accent border opacity-100',
           className
         )}
       >

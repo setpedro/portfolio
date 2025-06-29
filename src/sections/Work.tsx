@@ -59,7 +59,7 @@ export default function Work() {
         description: "Browser-based snake game built with Rust + WASM. Smooth movement, high performance, and an AI opponent.",
         buttons: {
           websiteButtonColor: "snaike",
-          websiteLink: "", 
+          websiteLink: "https://snaike.vercel.app/",
           moreLink: "https://github.com/setPedro/snaike"
         },
       },
