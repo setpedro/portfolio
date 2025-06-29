@@ -89,16 +89,33 @@ export default function WorkCard({ contents, logo, direction }: Work) {
                                 No website available for {contents.title}.
                             </p>
                             <p className="text-center">
-                                Want to see what’s under the hood? Explore the
-                                project details
+                                Want to see what’s under the hood? You can{" "}
                             </p>
                             <Hyperlink
                                 href={contents.buttons.moreLink}
-                                className="border-b hover:text-link-hover-blue hover:border-link-hover-blue"
+                                className="hover:text-link-hover-blue hover:border-link-hover-blue"
                             >
-                                here
+                                [view the project]
                             </Hyperlink>
                         </div>
+                        {contents.visuals && (
+                            <>
+                                <hr className="border-t my-6 w-full" />{" "}
+                                <div className="flex flex-col items-center mt-4 gap-2">
+                                    <p>How it looked like:</p>
+                                    {contents.visuals.map((visual, i) => (
+                                        <Image
+                                            src={visual.src}
+                                            key={i}
+                                            alt={visual.alt}
+                                            width={visual.width}
+                                            height={0}
+                                            style={{ height: "auto" }}
+                                        />
+                                    ))}
+                                </div>
+                            </>
+                        )}
                     </Modal>,
                     document.body // Render at root level
                 )}

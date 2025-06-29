@@ -7,15 +7,23 @@ type Buttons = {
   moreLink: string;
 };
 
+type Visual = {
+  src: string;
+  width: number;
+  alt: string;
+};
+
 export type Work = {
   contents: {
     title: string;
     description: string;
     buttons: Buttons;
+    visuals?: Visual[];
   };
   logo: string;
   direction: "left" | "right";
 };
+
 
 export default function Work() {
   const works: Work[] = [
@@ -29,6 +37,18 @@ export default function Work() {
           websiteLink: "",
           moreLink: "https://github.com/solana-mirror",
         },
+        visuals: [
+          {
+            src: "/solanaMirrorDemo.png",
+            width: 640,
+            alt: "Solana Mirror Demo",
+          },
+          {
+            src: "/balancesSolanaMirror.png",
+            width: 512,
+            alt: "Balances Solana Mirror"
+          }
+        ],
       },
       logo: "/Work/SolanaMirrorLogo.svg",
       direction: "left",
