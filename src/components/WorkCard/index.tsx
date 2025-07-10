@@ -9,22 +9,29 @@ import { Modal } from "../UI/Modal";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 
-export default function WorkCard({ contents, logo, direction }: Work) {
+type WorkCardProps = {
+    direction: "left" | "right"
+    work: Work
+}
+
+export default function WorkCard({ work, direction }: WorkCardProps) {
     const [isOpen, setIsOpen] = useState(false);
+
+    const { buttons, title, description, visuals } = work.contents
 
     const websiteButton = (
         <Button
             size="md"
-            color={contents.buttons.websiteButtonColor}
+            color={buttons.websiteButtonColor}
             border="none"
             className={cn(
-                contents.buttons.websiteButtonColor === "solanaMirror" &&
+                buttons.websiteButtonColor === "solanaMirror" &&
                     "text-foreground",
-                contents.buttons.websiteButtonColor === "snaike" &&
+                buttons.websiteButtonColor === "snaike" &&
                     "text-foreground"
             )}
             onClick={
-                !contents.buttons.websiteLink
+                !buttons.websiteLink
                     ? () => setIsOpen(true)
                     : undefined
             }
@@ -43,8 +50,8 @@ export default function WorkCard({ contents, logo, direction }: Work) {
             >
                 <div className="flex items-center justify-center min-w-48 h-48">
                     <Image
-                        src={logo}
-                        alt={`${contents.title} Logo`}
+                        src={work.logo}
+                        alt={`${title} Logo`}
                         width={108}
                         height={108}
                     />
@@ -58,18 +65,18 @@ export default function WorkCard({ contents, logo, direction }: Work) {
                     )}
                 >
                     <div className="flex flex-col gap-2">
-                        <p className="text-lg font-bold">{contents.title}</p>
-                        <p className="font-medium">{contents.description}</p>
+                        <p className="text-lg font-bold">{title}</p>
+                        <p className="font-medium">{description}</p>
                     </div>
                     <div className="flex gap-3">
-                        {contents.buttons.websiteLink ? (
-                            <Hyperlink href={contents.buttons.websiteLink}>
+                        {buttons.websiteLink ? (
+                            <Hyperlink href={buttons.websiteLink}>
                                 {websiteButton}
                             </Hyperlink>
                         ) : (
                             websiteButton
                         )}
-                        <Hyperlink href={contents.buttons.moreLink}>
+                        <Hyperlink href={buttons.moreLink}>
                             <Button size="md" color="none" border="md">
                                 More
                             </Button>
@@ -86,24 +93,24 @@ export default function WorkCard({ contents, logo, direction }: Work) {
                     >
                         <div className="flex flex-col gap-2 items-center">
                             <p className="font-bold text-center">
-                                No website available for {contents.title}.
+                                No website available for {title}.
                             </p>
                             <p className="text-center">
                                 Want to see what’s under the hood? You can{" "}
                             </p>
                             <Hyperlink
-                                href={contents.buttons.moreLink}
+                                href={buttons.moreLink}
                                 className="hover:text-link-hover-blue hover:border-link-hover-blue"
                             >
                                 [view the project]
                             </Hyperlink>
                         </div>
-                        {contents.visuals && (
+                        {visuals && (
                             <>
                                 <hr className="border-t my-6 w-full" />{" "}
                                 <div className="flex flex-col items-center mt-4 gap-2">
                                     <p>How it looked like:</p>
-                                    {contents.visuals.map((visual, i) => (
+                                    {visuals.map((visual, i) => (
                                         <Image
                                             src={visual.src}
                                             key={i}
