@@ -3,12 +3,13 @@ import Link from "next/link";
 import { Button } from "../UI/Button";
 import HashLink from "../UI/HashLink";
 
+const NAV_LINKS = [
+  { label: "Links", href: "#links" },
+  { label: "Work", href: "#work" },
+  { label: "Skills", href: "#skills" },
+];
+
 export default function NavBar() {
-  const navLinks = [
-    { label: "Links", href: "#links" },
-    { label: "Work", href: "#work" },
-    { label: "Skills", href: "#skills" },
-  ];
 
   return (
     <div className="w-full flex items-center justify-between py-6 px-9">
@@ -18,7 +19,7 @@ export default function NavBar() {
         </Button>
       </Link>
       <div className="flex items-center gap-5 font-bold">
-        {navLinks.map((link, i) => (
+        {NAV_LINKS.map((link, i) => (
           <HashLink
             href={link.href}
             key={i}

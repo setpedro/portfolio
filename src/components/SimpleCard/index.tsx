@@ -1,6 +1,6 @@
 import { cn } from "@/utils";
 import Image from "next/image";
-import { Hyperlink } from "../UI/HyperLink";
+import Link from "next/link";
 
 export type SimpleCardProps = {
   text: string;
@@ -15,7 +15,7 @@ export default function SimpleCard({
   link,
   className,
 }: SimpleCardProps) {
-  const card = (
+  const renderCard = () => (
     <div
       className={cn(
         "flex items-center justify-between h-16 min-w-64 bg-foreground rounded-lg px-6",
@@ -27,5 +27,5 @@ export default function SimpleCard({
     </div>
   );
 
-  return link ? <Hyperlink href={link}>{card}</Hyperlink> : card;
+  return link ? <Link href={link} target="_blank">{renderCard()}</Link> : renderCard();
 }

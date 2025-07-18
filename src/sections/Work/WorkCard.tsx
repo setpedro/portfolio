@@ -1,23 +1,23 @@
 "use client";
 
 import { Button } from "@/components/UI/Button";
-import { Work } from "@/sections/Work";
+import { Work } from "./works";
 import { cn } from "@/utils";
 import Image from "next/image";
-import { Hyperlink } from "../UI/HyperLink";
-import { Modal } from "../UI/Modal";
+import { Modal } from "../../components/UI/Modal";
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import Link from "next/link";
 
 type WorkCardProps = {
-    direction: "left" | "right"
-    work: Work
-}
+    direction: "left" | "right";
+    work: Work;
+};
 
 export default function WorkCard({ work, direction }: WorkCardProps) {
     const [isOpen, setIsOpen] = useState(false);
 
-    const { buttons, title, description, visuals } = work.contents
+    const { buttons, title, description, visuals } = work.contents;
 
     const websiteButton = (
         <Button
@@ -66,17 +66,17 @@ export default function WorkCard({ work, direction }: WorkCardProps) {
                     </div>
                     <div className="flex gap-3">
                         {buttons.websiteLink ? (
-                            <Hyperlink href={buttons.websiteLink}>
+                            <Link href={buttons.websiteLink} target="_blank">
                                 {websiteButton}
-                            </Hyperlink>
+                            </Link>
                         ) : (
                             <span>{websiteButton}</span>
                         )}
-                        <Hyperlink href={buttons.moreLink}>
+                        <Link href={buttons.moreLink} target="_blank">
                             <Button size="md" color="none" border="md">
                                 More
                             </Button>
-                        </Hyperlink>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -94,12 +94,13 @@ export default function WorkCard({ work, direction }: WorkCardProps) {
                             <p className="text-center">
                                 Want to see what’s under the hood? You can{" "}
                             </p>
-                            <Hyperlink
+                            <Link
                                 href={buttons.moreLink}
+                                target="_blank"
                                 className="hover:text-link-hover-blue hover:border-link-hover-blue"
                             >
                                 [view the project]
-                            </Hyperlink>
+                            </Link>
                         </div>
                         {visuals && (
                             <>
