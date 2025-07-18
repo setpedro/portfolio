@@ -25,16 +25,12 @@ export default function WorkCard({ work, direction }: WorkCardProps) {
             color={buttons.websiteButtonColor}
             border="none"
             className={cn(
+                "h-full",
                 buttons.websiteButtonColor === "solanaMirror" &&
                     "text-foreground",
-                buttons.websiteButtonColor === "snaike" &&
-                    "text-foreground"
+                buttons.websiteButtonColor === "snaike" && "text-foreground"
             )}
-            onClick={
-                !buttons.websiteLink
-                    ? () => setIsOpen(true)
-                    : undefined
-            }
+            onClick={!buttons.websiteLink ? () => setIsOpen(true) : undefined}
         >
             Website
         </Button>
@@ -74,7 +70,7 @@ export default function WorkCard({ work, direction }: WorkCardProps) {
                                 {websiteButton}
                             </Hyperlink>
                         ) : (
-                            websiteButton
+                            <span>{websiteButton}</span>
                         )}
                         <Hyperlink href={buttons.moreLink}>
                             <Button size="md" color="none" border="md">

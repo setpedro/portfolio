@@ -27,6 +27,19 @@ export default function Work() {
     const works: Work[] = [
         {
             contents: {
+                title: "Snaike",
+                description:
+                    "Browser-based snake game built with Rust + WASM. Smooth movement, high performance, and an AI opponent.",
+                buttons: {
+                    websiteButtonColor: "snaike",
+                    websiteLink: "https://snaike.vercel.app/",
+                    moreLink: "https://github.com/setPedro/snaike",
+                },
+            },
+            logo: "/Work/SnaikeLogo.png",
+        },
+        {
+            contents: {
                 title: "Solana Mirror",
                 description:
                     "Blockchain tool that facilitates users check their wallet at a glance.",
@@ -49,19 +62,6 @@ export default function Work() {
                 ],
             },
             logo: "/Work/SolanaMirrorLogo.svg",
-        },
-        {
-            contents: {
-                title: "Snaike",
-                description:
-                    "Browser-based snake game built with Rust + WASM. Smooth movement, high performance, and an AI opponent.",
-                buttons: {
-                    websiteButtonColor: "snaike",
-                    websiteLink: "https://snaike.vercel.app/",
-                    moreLink: "https://github.com/setPedro/snaike",
-                },
-            },
-            logo: "/Work/SnaikeLogo.svg",
         },
         {
             contents: {

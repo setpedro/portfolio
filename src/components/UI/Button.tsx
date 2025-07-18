@@ -28,9 +28,9 @@ export const Button = ({
       none: "px-0 py-0",
     },
     colors: {
-      solanaMirror: "bg-solanaMirror",
+      solanaMirror: "bg-solana-mirror",
       snaike: "bg-snaike",
-      usellExperience: "bg-usellExperience",
+      usellExperience: "bg-usell-experience",
       none: "none",
     },
     borders: {
